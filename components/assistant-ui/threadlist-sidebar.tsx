@@ -1,3 +1,4 @@
+'use client'
 import * as React from "react";
 import { Github, MessagesSquare } from "lucide-react";
 import Link from "next/link";
@@ -24,7 +25,7 @@ export function ThreadListSidebar({
             <SidebarMenuItem>
               <SidebarMenuButton size="lg" asChild>
                 <Link
-                  href="https://assistant-ui.com"
+                  href={process.env.NEXT_PUBLIC_GITHUB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -33,7 +34,7 @@ export function ThreadListSidebar({
                   </div>
                   <div className="aui-sidebar-header-heading mr-6 flex flex-col gap-0.5 leading-none">
                     <span className="aui-sidebar-header-title font-semibold">
-                      assistant-ui
+                      {process.env.NEXT_PUBLIC_AIMODULE_NAME}
                     </span>
                   </div>
                 </Link>
@@ -51,17 +52,16 @@ export function ThreadListSidebar({
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
               <Link
-                href="https://github.com/assistant-ui/assistant-ui"
-                target="_blank"
+                href={process.env.NEXT_PUBLIC_APP_URL}
               >
                 <div className="aui-sidebar-footer-icon-wrapper flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                   <Github className="aui-sidebar-footer-icon size-4" />
                 </div>
                 <div className="aui-sidebar-footer-heading flex flex-col gap-0.5 leading-none">
                   <span className="aui-sidebar-footer-title font-semibold">
-                    GitHub
+                    {process.env.NEXT_PUBLIC_APP_NAME}
                   </span>
-                  <span>View Source</span>
+                  <span>Back To Learn Core Words</span>
                 </div>
               </Link>
             </SidebarMenuButton>
